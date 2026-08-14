@@ -10,7 +10,11 @@ const puerto = process.env.PUERTO || 3030
 app.get('/', (__, res) => {
   res.send('Aprendiendo express,ficha 3407181, ADSO EN EL SENA 23, 31 de julio');
 });
-
+ commonjs
+app.listen(port, () => {
+  console.log(`SERVIDOR: http://localhost:${port}`);
+});
+=======
 
 app.get("/Otraruta", (req, res)=>{
   //usando template string
@@ -43,3 +47,4 @@ app.get("/ruta4", (req, res) =>{
 app.listen(puerto, function (){
   console.log(`SERVIDOR  ${puerto} http://localhost:3030/`);
 });
+ master
