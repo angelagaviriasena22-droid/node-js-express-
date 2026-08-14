@@ -2,8 +2,9 @@
   "name": "intro-express-js-angela-gaviria",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "dev": "node --watch app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,6 +12,15 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "dotenv": "^17.4.2",
     "express": "^5.2.1"
-  }
+  },
+  "repository": {
+    "type": "commonjs",
+    "url": "git+https://github.com/angelagaviriasena22-droid/node-js-express-.git"
+  },
+  "bugs": {
+    "url": "https://github.com/angelagaviriasena22-droid/node-js-express-/issues"
+  },
+  "homepage": "https://github.com/angelagaviriasena22-droid/node-js-express-#readme"
 }
