@@ -5,6 +5,36 @@ configDotenv()
 
 
 const app = express();
+aprendices
+require("dotenv/config");
+const port = process.env.PUERTO || 3000;
+//configurar para la lectura del archivo 
+const sistemaArchivo =require ("fs")
+const ruta = require("path")
+const rutaArchivo = ruta.join(__dirname, "datos.json") 
+//endpoint para la ruta raiz
+app.get('/', (req, res) => {
+  res.send('API - Rest Aprendices');
+});
+//endpoint para ver los datos del archivo 
+app.get("/api/aprendices", (req, res) => {
+  //datos vienen del archivo 
+  sistemaArchivo.readFile(rutaArchivo, "utf-8", (error, data) => {
+    if (error) {
+      return res.json({ error: "Error al leer el archivo" });
+    }
+    const listaAprendices = JSON.parse(data);
+    res.json(listaAprendices);
+  });
+
+  app.listen(PUERTO, () => {
+    console.log(`SERVIDOR http://localhost:${PUERTO}`);
+  });
+})
+
+
+
+
 const puerto = process.env.PUERTO || 3030
 
 app.get('/', (__, res) => {
@@ -14,7 +44,7 @@ app.get('/', (__, res) => {
 app.listen(port, () => {
   console.log(`SERVIDOR: http://localhost:${port}`);
 });
-=======
+
 
 app.get("/Otraruta", (req, res)=>{
   //usando template string
@@ -47,4 +77,5 @@ app.get("/ruta4", (req, res) =>{
 app.listen(puerto, function (){
   console.log(`SERVIDOR  ${puerto} http://localhost:3030/`);
 });
- master
+
+

@@ -1,0 +1,16 @@
+[
+    {"dni":1,
+    "nombre": "Juan",
+    "apellido": "Perez",
+    "correo": "juan.perez@example.com",
+    "imagen": "https://example.com/juan.jpg"
+},
+
+    {"dni":2,
+    "nombre": "Maria",
+    "apellido": "Gomez",
+    "correo": "maria.gomez@example.com",
+    "imagen": "https://example.com/maria.jpg"
+}
+]
+    

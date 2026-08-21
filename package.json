@@ -5,12 +5,15 @@
   "main": "app.js",
   "scripts": {
     "dev": "node --watch app.js",
- commonjs
+ aprendices
+
+
+
     "test": "echo \"Error: no test specified\" && exit 1"
-=======
+
     "start": "node app.js",
     "test":"echo \"Error: no test specified\" && exit 1"
- master
+
   },
   "keywords": [],
   "author": "",
