@@ -1,16 +1,22 @@
 [
-    {"dni":1,
-    "nombre": "Juan",
-    "apellido": "Perez",
-    "correo": "juan.perez@example.com",
-    "imagen": "https://example.com/juan.jpg"
-},
-
-    {"dni":2,
+  {
+    "dni": 1,
+    "nombre": "Amgela",
+    "apellido": "Gaviria",
+    "correo": "amgela.gaviria@sena.com",
+    "imagen": "https://example.com/amgela.jpg"
+  },
+  {
+    "dni": 2,
     "nombre": "Maria",
     "apellido": "Gomez",
     "correo": "maria.gomez@example.com",
     "imagen": "https://example.com/maria.jpg"
-}
+  },
+  null,
+  null,
+  {
+    "nombre": "laura gutierrez",
+    "gmail": "laura@gmail.com"
+  }
 ]
-    
