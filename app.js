@@ -8,9 +8,12 @@ const ruta = require("path");
 const rutaArchivoJson = ruta.join(__dirname, "datos.json");
 //IMPORTACION LIBRERIA PARA SUBIR ARCHIVOS 
 const multer = require("multer");
+const jwt = require("jsonwebtoken");  
 //Importar middleware personalizado
 const registroMiddleware = require("./middleware/registroMiddleware");
 
+const manejadorErrores = require("./middleware/ManejadorErrores");
+const autenticarMiddleware = require("./middleware/autenticarMiddleware");
 
 // Importar las funciones de validación
 const {
@@ -113,6 +116,38 @@ app.delete("/api/aprendices/:id", (req, res) => {
   res.status(200).json({ mensaje: "endpoint en proceso de construcción de eliminar" });
 });
 
+//provoca error urilizo next
+app.get("/error", (req, res,next) => {
+  next(new Error("Error intecional para probar."))
+})
+
+//ruta protegida
+app.post("/rutaprotegida", autenticarMiddleware, (req, res) => {
+  res.json({ mensaje: "Esta ruta  ruta protegida"})
+})
+
+//endpoint iniciar sesion generar token
+app.post("/iniciar-sesion", (req, res) => {
+  //capturar usuario y clave
+  const { usuario, clave } = req.body;
+  //simular usuario base de datos 
+  const usuarioBD = {"user": "angela","clave": "2222"}
+    //verificar credenciales
+    if(usuario !== usuarioBD.usuario || clave !== usuarioBD.clave){
+      res.json({mensaje: "Credenciales incorrectas"})
+    }
+  
+  //generar token 
+  const token = jwt.sign(
+    {usuario: usuario},
+    process.env.JWT_SECRETO, 
+    {expiresIn: "2h"}
+  )
+  res.json({token: token})
+})
+  //uso del middleware de manejo de errores
+app.use(manejadorErrores);
+//el servidor en funcionamiento , la variable de entorno .env
 app.listen(puerto, () => {
   console.log(`Servidor en funcionamiento en el puerto: http://localhost:${puerto}`);
 });
