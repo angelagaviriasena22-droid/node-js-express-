@@ -15,7 +15,9 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
-    "multer": "^2.3.0"
+    "multer": "^2.3.0",
+    "pg": "^8.23.1",
+    "tsx": "^4.23.15"
   },
   "repository": {
     "type": "commonjs",
@@ -24,5 +26,10 @@
   "bugs": {
     "url": "https://github.com/angelagaviriasena22-droid/node-js-express-/issues"
   },
-  "homepage": "https://github.com/angelagaviriasena22-droid/node-js-express-#readme"
+  "homepage": "https://github.com/angelagaviriasena22-droid/node-js-express-#readme",
+  "devDependencies": {
+    "@prisma/adapter-pg": "^7.10.0",
+    "@prisma/client": "^7.10.0",
+    "prisma": "^7.10.0"
+  }
 }
